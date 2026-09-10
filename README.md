@@ -3,14 +3,7 @@
 The landing page for [ReadyVim](https://github.com/mohamadKrayem/readyvim) — my
 personal Neovim + tmux setup. Served by GitHub Pages from `main`:
 
-**https://mohamadkrayem.me/readyvim-site/**
-
-The account's user-site repo (`mohamadKrayem.github.io`) sets a `CNAME` of
-`mohamadkrayem.me`, so every project page for the account is served under that
-domain; `https://mohamadkrayem.github.io/readyvim-site/` redirects there. That
-means this page is only reachable while `mohamadkrayem.me` resolves — if the
-domain's DNS is ever dropped, remove the `CNAME` from the user-site repo and
-the `github.io` address starts serving directly again.
+**https://mohamadkrayem.github.io/readyvim-site/**
 
 ## How it works
 
