@@ -42,17 +42,22 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
-nav button {
+nav button,
+nav .navlink {
   padding: .45rem .8rem;
   border: 1px solid var(--border);
   border-radius: 3px;
   background: var(--panel);
   color: var(--fg);
+  font: inherit;
   font-size: .9rem;
+  line-height: 1.35;
+  text-decoration: none;
   cursor: pointer;
 }
 
-nav button:hover { border-color: var(--accent); color: var(--accent); }
+nav button:hover,
+nav .navlink:hover { border-color: var(--accent); color: var(--accent); }
 
 main { min-height: 20rem; }
 
