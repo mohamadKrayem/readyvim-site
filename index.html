@@ -8,7 +8,19 @@
 <meta name="description" content="ReadyVim is the Neovim, tmux, lf and lazygit configuration I use every day: seamless split navigation, a project switcher, LSP through Mason, and a one-command install. Shared for fun, not a product.">
 <link rel="canonical" href="https://mohamadkrayem.github.io/readyvim-site/">
 <meta name="author" content="Mohamad Krayem">
-<meta name="theme-color" content="#1c1c1c">
+<meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfbfb" media="(prefers-color-scheme: light)">
+
+<!-- Runs before the stylesheet paints, so a saved choice never flashes the
+     other theme first. No saved choice means the system decides. -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  })();
+</script>
 
 <!-- Link previews. Bots that unfurl a URL (Slack, WhatsApp, Telegram,
      LinkedIn, iMessage) do not run JavaScript, so everything they need has
@@ -49,6 +61,7 @@
 <body>
 
 <header>
+  <button id="theme-toggle" class="theme-toggle" type="button">Light theme</button>
   <h1>ReadyVim</h1>
   <p class="tagline">Neovim, tmux, lf and lazygit — wired to work as one.</p>
   <p class="disclaimer">
@@ -62,7 +75,7 @@
 <nav>
   <!-- Intro is a plain link home, because its text lives inline below rather
        than in a fragment. The rest swap a static file into #content. -->
-  <a class="navlink" href="./">Intro</a>
+  <a class="navlink active" href="./">Intro</a>
   <button hx-get="partials/prerequisites.html" hx-target="#content">Prerequisites</button>
   <button hx-get="partials/install.html"       hx-target="#content">Install</button>
   <button hx-get="partials/docs.html"          hx-target="#content">Docs</button>
@@ -124,5 +137,40 @@ cd ~/personal/dotfiles
   <a href="https://github.com/mohamadKrayem/readyvim/blob/main/LICENSE">MIT</a>
 </footer>
 
+<script>
+  // Which tab is showing. htmx swaps the panel; this just moves the marker.
+  document.querySelector("nav").addEventListener("click", function (event) {
+    var tab = event.target.closest("button, .navlink");
+    if (!tab) return;
+    document.querySelectorAll("nav .active").forEach(function (el) {
+      el.classList.remove("active");
+    });
+    tab.classList.add("active");
+  });
+
+  // Theme switch. The button names the theme you would get by pressing it.
+  (function () {
+    var root = document.documentElement;
+    var button = document.getElementById("theme-toggle");
+
+    function current() {
+      return root.getAttribute("data-theme") ||
+        (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    }
+
+    function label() {
+      button.textContent = current() === "dark" ? "Light theme" : "Dark theme";
+    }
+
+    button.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      label();
+    });
+
+    label();
+  })();
+</script>
 </body>
 </html>
