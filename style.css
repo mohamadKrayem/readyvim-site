@@ -1,0 +1,118 @@
+/* Colours lifted from the tmux status line, so the site and the setup match.
+   No animations, no transitions - the page just shows up. */
+:root {
+  --bg: #1c1c1c;
+  --fg: #d0d0d0;
+  --muted: #9e9e9e;
+  --accent: #5fafd7;
+  --border: #3a3a3a;
+  --panel: #222222;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  max-width: 46rem;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+h1 { margin: 0; font-size: 2rem; color: var(--accent); }
+h2 { margin: 2rem 0 .75rem; font-size: 1.2rem; color: var(--accent); }
+h3 { margin: 1.5rem 0 .5rem; font-size: 1rem; color: var(--fg); }
+
+.tagline { margin: .25rem 0 1rem; color: var(--muted); }
+
+.disclaimer {
+  margin: 0 0 1.5rem;
+  padding: .75rem 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+  font-size: .925rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+nav button {
+  padding: .45rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--fg);
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+nav button:hover { border-color: var(--accent); color: var(--accent); }
+
+main { min-height: 20rem; }
+
+p, li { color: var(--fg); }
+a { color: var(--accent); }
+
+code {
+  padding: .1rem .3rem;
+  border-radius: 3px;
+  background: var(--panel);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .9em;
+}
+
+pre {
+  overflow-x: auto;                 /* long commands scroll, page never does */
+  padding: .9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--panel);
+}
+
+pre code { padding: 0; background: none; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: .5rem 0 1rem;
+  font-size: .925rem;
+}
+
+th, td {
+  padding: .4rem .6rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+th { color: var(--muted); font-weight: 600; }
+
+.table-wrap { overflow-x: auto; }     /* wide key tables scroll on phones */
+
+.note { color: var(--muted); font-size: .925rem; }
+
+footer {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fbfbfb;
+    --fg: #24292f;
+    --muted: #57606a;
+    --accent: #0969da;
+    --border: #d8dee4;
+    --panel: #f2f2f2;
+  }
+}

@@ -1,0 +1,39 @@
+<h2>Documentation</h2>
+
+<p>
+  The repository is the real documentation — these are the files worth opening
+  first.
+</p>
+
+<ul>
+  <li><a href="https://github.com/mohamadKrayem/readyvim/blob/main/README.md">README</a> — requirements, install, and how the pieces fit together.</li>
+  <li><a href="https://github.com/mohamadKrayem/readyvim/blob/main/nvim/SHORTCUTS.md">SHORTCUTS.md</a> — the full keymap reference.</li>
+</ul>
+
+<h3>How the repo is laid out</h3>
+
+<pre><code>nvim/       Neovim config (lazy.nvim)
+tmux/       standalone tmux.conf + tmux-sessionizer, the project switcher
+lf/         lf file manager - the one nvim opens
+yazi/       yazi file manager - kept, but disabled in favour of lf
+lazygit/    lazygit, including the "open in parent nvim" integration
+install.sh  symlinks everything into place</code></pre>
+
+<h3>Inside the Neovim config</h3>
+
+<pre><code>init.lua              leader keys, then load order
+lua/config/
+  lazy.lua            lazy.nvim bootstrap + which plugin folders to import
+  options.lua         editor settings
+  keymaps.lua         global keymaps
+  diagnostics.lua     diagnostic appearance
+  autocmds.lua        autocommands
+lua/plugins/
+  ui/ editor/ lsp/ git/ ai/ debug/</code></pre>
+
+<p>
+  Adding a plugin means dropping a file into the matching folder —
+  <code>lua/config/lazy.lua</code> imports folders, not individual files.
+  Plugin-specific keymaps live with the plugin; only global ones sit in
+  <code>keymaps.lua</code>.
+</p>

@@ -1,0 +1,34 @@
+<h2>Install</h2>
+
+<pre><code>git clone git@github.com:mohamadKrayem/readyvim.git ~/personal/dotfiles
+cd ~/personal/dotfiles
+./install.sh</code></pre>
+
+<p>
+  <code>install.sh</code> symlinks each config into the place its tool expects.
+  Anything already sitting at one of those paths is moved into a timestamped
+  <code>~/.dotfiles-backup-*</code> directory first, so nothing of yours is
+  overwritten. Re-running it is safe.
+</p>
+
+<h3>Try it without touching your own config</h3>
+
+<p>No symlinks, nothing written outside the clone:</p>
+
+<pre><code>git clone git@github.com:mohamadKrayem/readyvim.git ~/personal/dotfiles
+XDG_CONFIG_HOME=~/personal/dotfiles nvim</code></pre>
+
+<p class="note">
+  <code>NVIM_APPNAME</code> won't work for this — it resolves under
+  <code>~/.config</code>, so it can't reach a clone living somewhere else.
+</p>
+
+<h3>Or in Docker</h3>
+
+<p>A throwaway container with all the tools, nothing installed on your machine:</p>
+
+<pre><code>make docker-test</code></pre>
+
+<h3>Pin a version</h3>
+
+<pre><code>git clone --branch v0.1.0 git@github.com:mohamadKrayem/readyvim.git ~/personal/dotfiles</code></pre>

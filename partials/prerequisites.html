@@ -1,0 +1,29 @@
+<h2>Prerequisites</h2>
+
+<p>Install these before running the setup. Most are already on a developer machine.</p>
+
+<div class="table-wrap">
+<table>
+  <tr><th>Tool</th><th>Why it's needed</th></tr>
+  <tr><td>Neovim 0.11+</td><td>Uses <code>vim.diagnostic.jump</code> and <code>vim.hl</code></td></tr>
+  <tr><td>git, ripgrep, fd</td><td>Telescope pickers</td></tr>
+  <tr><td>a C compiler + make</td><td>Building treesitter parsers</td></tr>
+  <tr><td>node</td><td>Several language servers</td></tr>
+  <tr><td>python3</td><td>basedpyright, debugpy</td></tr>
+  <tr><td>tmux 3.2+</td><td>Floating popups</td></tr>
+  <tr><td>fzf</td><td>The <code>prefix + f</code> project switcher</td></tr>
+  <tr><td>lf</td><td>File manager, and netrw's replacement</td></tr>
+  <tr><td>lazygit, yazi</td><td>Optional — the integrations expect them if you use them</td></tr>
+</table>
+</div>
+
+<p>
+  A <strong>Nerd Font</strong> is required for Neovim: the statusline, bufferline
+  and diagnostic signs all use glyphs. The tmux config is deliberately ASCII-only
+  and needs no special font.
+</p>
+
+<p class="note">
+  Language servers and debug adapters install themselves through Mason the first
+  time you open Neovim, so there's nothing to set up by hand.
+</p>

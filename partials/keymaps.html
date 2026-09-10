@@ -1,0 +1,66 @@
+<h2>Keymaps</h2>
+
+<p>
+  A selection — the ones that shape how the setup feels. The
+  <a href="https://github.com/mohamadKrayem/readyvim/blob/main/nvim/SHORTCUTS.md">full list</a>
+  is in the repo. Leader is <code>Space</code>.
+</p>
+
+<h3>Moving around</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Key</th><th>Does</th></tr>
+  <tr><td><code>Ctrl+h/j/k/l</code></td><td>Move between Neovim splits <em>and</em> tmux panes, same keys</td></tr>
+  <tr><td><code>Ctrl+p</code> / <code>Ctrl+n</code></td><td>Jump 8 lines up / down</td></tr>
+  <tr><td><code>[[</code> / <code>]]</code></td><td>Start / end of the construct the cursor is in (treesitter)</td></tr>
+  <tr><td><code>&lt;leader&gt;n</code> / <code>&lt;leader&gt;p</code></td><td>Next / previous occurrence of the word under the cursor</td></tr>
+</table>
+</div>
+
+<h3>Text objects</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Key</th><th>Selects</th></tr>
+  <tr><td><code>aq</code> / <code>iq</code></td><td>A string with / without its quotes — any quote style, multi-line included</td></tr>
+  <tr><td><code>af</code> / <code>if</code></td><td>A function, outer / inner</td></tr>
+  <tr><td><code>ac</code> / <code>ic</code></td><td>A class, outer / inner</td></tr>
+</table>
+</div>
+
+<h3>Files and projects</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Key</th><th>Does</th></tr>
+  <tr><td><code>&lt;leader&gt;-</code></td><td>Open lf with the cursor already on the current file</td></tr>
+  <tr><td><code>&lt;leader&gt;sf</code> / <code>&lt;leader&gt;sg</code></td><td>Find files / live grep</td></tr>
+  <tr><td><code>&lt;leader&gt;sp</code></td><td>Switch project — saves this one's session, restores the next one's</td></tr>
+  <tr><td><code>&lt;leader&gt;sP</code></td><td>Bounce back to the previous project</td></tr>
+</table>
+</div>
+
+<h3>tmux</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Key</th><th>Does</th></tr>
+  <tr><td><code>prefix + f</code></td><td>Pick a project, and open it as a session with editor and terminal side by side</td></tr>
+  <tr><td><code>prefix + Shift-Tab</code></td><td>Back to the last project</td></tr>
+  <tr><td><code>prefix + t</code> / <code>prefix + g</code></td><td>Floating scratch shell / lazygit</td></tr>
+  <tr><td><code>prefix + -</code> / <code>prefix + _</code></td><td>Split stacked / side by side</td></tr>
+</table>
+</div>
+
+<h3>Inside lf</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Key</th><th>Copies</th></tr>
+  <tr><td><code>yn</code> / <code>ys</code></td><td>File name / name without extension</td></tr>
+  <tr><td><code>yp</code> / <code>yd</code></td><td>Absolute path / containing directory</td></tr>
+  <tr><td><code>yr</code></td><td>Path relative to the repo root</td></tr>
+</table>
+</div>
+<p class="note">
+  <code>y</code> is a prefix there, so lf's built-in copy is <code>yy</code>.
+  <code>af</code> / <code>ad</code> create a file / directory, <code>D</code>
+  deletes with a confirmation. Clipboard commands are macOS-only for now
+  (<code>pbcopy</code>).
+</p>

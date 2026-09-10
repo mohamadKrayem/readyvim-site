@@ -1,0 +1,33 @@
+<h2>What this is</h2>
+
+<p>
+  ReadyVim is the configuration I use for the four tools I spend my day in:
+  Neovim, tmux, lf and lazygit. They're set up to behave like one thing rather
+  than four — the same <code>Ctrl+h/j/k/l</code> crosses Neovim splits and tmux
+  panes, lazygit opens files back into the Neovim that launched it, and lf takes
+  over as the file manager instead of netrw.
+</p>
+
+<h3>Why it's here</h3>
+
+<p>
+  For fun, mostly. I kept tweaking this setup and figured I'd put it somewhere
+  public rather than let it live only on my laptop. If you're building your own
+  config and want to steal an idea, a keymap or a whole file, please do.
+</p>
+
+<p class="note">
+  To be clear about what this isn't: it isn't a Neovim distribution, it isn't
+  maintained as a product, and there's no company behind it. It's one
+  developer's dotfiles. Things will change when they annoy me, and I won't
+  always write it down.
+</p>
+
+<h3>What's inside</h3>
+
+<ul>
+  <li><strong>Neovim</strong> — lazy.nvim, LSP through Mason, Telescope, treesitter, DAP, gitsigns, format-on-save.</li>
+  <li><strong>tmux</strong> — standalone, no framework. Floating popups, a project switcher, seamless pane navigation.</li>
+  <li><strong>lf</strong> — the file manager, opened straight from Neovim.</li>
+  <li><strong>lazygit</strong> — with the "open in parent nvim" integration.</li>
+</ul>

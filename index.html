@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReadyVim — a Neovim + tmux setup</title>
+<meta name="description" content="ReadyVim: the Neovim, tmux, lf and lazygit setup I use day to day. Shared in case it's useful to someone else.">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>ReadyVim</h1>
+  <p class="tagline">Neovim, tmux, lf and lazygit — wired to work as one.</p>
+  <p class="disclaimer">
+    This is just my personal setup, the one I actually use every day. I'm putting
+    it up in case someone finds a piece of it handy — it isn't a product, it
+    isn't a framework, and nothing here is commercial. Take what's useful,
+    ignore the rest.
+  </p>
+</header>
+
+<nav>
+  <!-- Each button swaps a static fragment into #content. No build step,
+       no server - just files that GitHub Pages already serves. -->
+  <button hx-get="partials/intro.html"         hx-target="#content" hx-trigger="click, load">Intro</button>
+  <button hx-get="partials/prerequisites.html" hx-target="#content">Prerequisites</button>
+  <button hx-get="partials/install.html"       hx-target="#content">Install</button>
+  <button hx-get="partials/docs.html"          hx-target="#content">Docs</button>
+  <button hx-get="partials/keymaps.html"       hx-target="#content">Keymaps</button>
+  <button hx-get="partials/about.html"         hx-target="#content">About me</button>
+</nav>
+
+<main id="content">
+  <p>Loading…</p>
+</main>
+
+<footer>
+  <a href="https://github.com/mohamadKrayem/readyvim">Repository</a>
+  <a href="https://github.com/mohamadKrayem/readyvim/releases/tag/v0.1.0">v0.1.0</a>
+  <a href="https://github.com/mohamadKrayem/readyvim/blob/main/LICENSE">MIT</a>
+</footer>
+
+</body>
+</html>
