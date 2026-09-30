@@ -14,6 +14,20 @@
   <tr><td><code>Ctrl+p</code> / <code>Ctrl+n</code></td><td>Jump 8 lines up / down</td></tr>
   <tr><td><code>[[</code> / <code>]]</code></td><td>Start / end of the construct the cursor is in (treesitter)</td></tr>
   <tr><td><code>&lt;leader&gt;n</code> / <code>&lt;leader&gt;p</code></td><td>Next / previous occurrence of the word under the cursor</td></tr>
+  <tr><td><code>s</code> + letters + label</td><td>Jump anywhere on screen: type a few letters of the target, then the label that appears there</td></tr>
+  <tr><td><code>S</code></td><td>Select the function, block or argument around the cursor</td></tr>
+  <tr><td><code>[x</code></td><td>Jump up to the enclosing function, which stays pinned at the top while you scroll</td></tr>
+</table>
+</div>
+
+<h3>Editing</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Key</th><th>Does</th></tr>
+  <tr><td><code>gsa</code> / <code>gsd</code> / <code>gsr</code></td><td>Add / delete / replace surrounding quotes and brackets — <code>gsr"'</code> turns <code>"x"</code> into <code>'x'</code></td></tr>
+  <tr><td><code>&lt;leader&gt;fr</code></td><td>Find and replace across the whole project, with a preview of every change</td></tr>
+  <tr><td><code>&lt;leader&gt;U</code></td><td>Undo history as a tree, including edits plain <code>u</code> can no longer reach</td></tr>
+  <tr><td><code>&lt;leader&gt;ac</code></td><td>Send the file, or the selected code, to Claude in the next tmux pane</td></tr>
 </table>
 </div>
 
@@ -36,6 +50,8 @@
   <tr><td><code>&lt;leader&gt;sp</code></td><td>Switch project — saves this one's session, restores the next one's</td></tr>
   <tr><td><code>&lt;leader&gt;sP</code></td><td>Bounce back to the previous project</td></tr>
   <tr><td><code>&lt;leader&gt;gw</code></td><td>Switch to another worktree of this repo, by branch</td></tr>
+  <tr><td><code>&lt;leader&gt;gd</code></td><td>Review every uncommitted change, side by side, like a pull request</td></tr>
+  <tr><td><code>&lt;leader&gt;gh</code></td><td>History of the current file, commit by commit</td></tr>
 </table>
 </div>
 
@@ -62,13 +78,16 @@
 </div>
 
 <h3>tmux</h3>
-<p>The prefix is <code>Ctrl+Space</code>. Press it twice to send a real <code>Ctrl+Space</code> to the program in the pane.</p>
+<p>The prefix is <code>Ctrl+Space</code>. Press it twice to send a real <code>Ctrl+Space</code> to the program in the pane.
+Sessions survive a reboot: they are saved every 10 minutes and come back when tmux starts, with Neovim reopened and Claude continuing its conversation.</p>
 <div class="table-wrap">
 <table>
   <tr><th>Key</th><th>Does</th></tr>
   <tr><td><code>prefix + f</code></td><td>Pick a project, and open it as a session with editor and terminal side by side</td></tr>
   <tr><td><code>prefix + Ctrl+f</code></td><td>Search the open sessions and switch to one</td></tr>
   <tr><td><code>prefix + Shift-Tab</code></td><td>Back to the last project</td></tr>
+  <tr><td><code>prefix + W</code></td><td>Open another branch as a worktree, in its own session with editor and Claude</td></tr>
+  <tr><td><code>prefix + n</code></td><td>Today's note in a floating window, from any pane</td></tr>
   <tr><td><code>prefix + t</code> / <code>prefix + g</code></td><td>Floating scratch shell / lazygit</td></tr>
   <tr><td><code>prefix + -</code> / <code>prefix + _</code></td><td>Split stacked / side by side</td></tr>
 </table>
