@@ -1,7 +1,7 @@
 <h2>Documentation</h2>
 
 <p>
-  The repository is the real documentation — these are the files worth opening
+  The repository is the real documentation. These are the files to open
   first.
 </p>
 
@@ -13,11 +13,11 @@
 <h3>How the repo is laid out</h3>
 
 <pre><code>nvim/       Neovim config (lazy.nvim)
-tmux/       standalone tmux.conf + tmux-sessionizer, the project switcher
+tmux/       standalone tmux.conf, tmux-sessionizer (projects), tmux-worktree (branches)
 lf/         lf file manager - the one nvim opens
 yazi/       yazi file manager - kept, but disabled in favour of lf
 lazygit/    lazygit, including the "open in parent nvim" integration
-install.sh  symlinks everything into place</code></pre>
+install.sh  symlinks everything into place, clones the two tmux plugins</code></pre>
 
 <h3>Inside the Neovim config</h3>
 
@@ -26,6 +26,7 @@ lua/config/
   lazy.lua            lazy.nvim bootstrap + which plugin folders to import
   options.lua         editor settings
   keymaps.lua         global keymaps
+  claude.lua          send code to the claude pane
   diagnostics.lua     diagnostic appearance
   autocmds.lua        autocommands
 lua/plugins/
